@@ -1,15 +1,18 @@
 <?php
 function logout(){
-    /*
-Check if the existing user has a session
-if it does
-destroy the session and redirect to login page
-*/
+   
 session_start();
-   unset($_SESSION["email"]);
-      unset($_SESSION["password"]);
-         
+    
+    if($_SESSION){
+        session_destroy();
+        header("location: ../index.php);
+        exit();
+    }
+   else{
+        header("location: ../index.php?error=You are not logged in");
+        exit();
+   }
 }
 
-echo "logout successful";
+logout();
 ?>
