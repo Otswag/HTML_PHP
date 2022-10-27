@@ -22,6 +22,14 @@
       <li class="nav-item f-right">
         <a class="nav-link" href="php/logout.php">Logout</a>
       </li>
+        
+     <?php
+        if(isset($_GET['error'])){
+            echo "<script>alert('".$_GET['error']."')</script>";
+            
+        }
+     ?>
+        
   </div>
 </nav>
 <div class="container justify-content-center">
